@@ -1,0 +1,91 @@
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.Scanner;
+
+/**
+ * 
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public final class Dictionary {
+
+	/**
+	 * @param args
+	 * @throws IOException 
+	 */
+	 public static ArrayList<String> numbers = new ArrayList<String>();
+	    public static ArrayList<String> numbers2 = new ArrayList<String>() {
+	    };
+
+	    public static void main(String[] args) {
+	        Scanner dict = null;
+
+	        try {
+	            dict = new Scanner(new File("dictionary.txt"));
+	        } catch (FileNotFoundException ex) {
+	        }
+
+	        while (dict.hasNextLine()) {
+
+	            numbers.add(dict.nextLine());
+	        }
+
+	        String n = "iwofhak";//random text here
+
+	        rearrange("", n);
+	        LinkedHashSet<String> listToSet = new LinkedHashSet<String>(numbers2);
+	        ArrayList<String> listWithoutDuplicates = new ArrayList<String>(listToSet);
+	        for (int i = 0; i < listWithoutDuplicates.size(); i++) {
+
+	            if (numbers.contains(listWithoutDuplicates.get(i))) {
+	                System.out.println(listWithoutDuplicates.get(i));
+	            }
+	        }
+
+	    }
+
+	    public static void rearrange(
+	            String q, String w) {
+	        if (w.length() <= 1) {
+	            String k = q + w;
+	            numbers2.add(k);//full word
+	            numbers2.add(q);//smaller combination to get words with less letters. doesn't work too well
+	        } else {
+
+	            for (int i = 0; i < w.length(); i++) {
+
+	                String c = w.substring(0, i)
+	                        + w.substring(i + 1);
+
+	                rearrange(q
+	                        + w.charAt(i), c);
+
+	            }
+	        }
+	    }
+	}
+/*
+try {
+BufferedReader br = new BufferedReader(new FileReader("dictionary.txt"));
+ try {
+     String x;
+     while ( (x = br.readLine()) != null ) {
+         // printing out each line in the file
+         System.out.println(x);
+     } 
+ } catch (IOException e) {
+     e.printStackTrace();
+ }
+} catch (FileNotFoundException e) {
+ System.out.println(e);
+ e.printStackTrace();
+}
+ */

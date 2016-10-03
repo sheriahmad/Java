@@ -5,7 +5,7 @@
 /**
  * @author Sheheryar Ahmad
  */
-public class Dictionary {
+public final class Dictionary {
 
 	/**
 	 * @param args

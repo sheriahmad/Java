@@ -1,0 +1,39 @@
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+/**
+ * 
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public final class Dictionary {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		try {
+           BufferedReader br = new BufferedReader(new FileReader("//Users/sahmad/Documents/Development/Java/myRandomProjects/Dictionary/dictionary.txt"));
+            try {
+                String x;
+                while ( (x = br.readLine()) != null ) {
+                    // printing out each line in the file
+                    System.out.println(x);
+                } 
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println(e);
+            e.printStackTrace();
+        }
+
+	}
+
+}
