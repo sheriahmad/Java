@@ -1,0 +1,135 @@
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
+public class ListPossibleWords {
+	public static void main(String args[])
+	{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter your input :");
+        String userInput = null;
+        try {
+			userInput = br.readLine();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        if(userInput.length() < 7)
+        {
+        	int ogLen = userInput.length();
+        	for(;ogLen<7;ogLen++)
+        	{
+        		userInput += " ";
+        	}
+        }
+        userInput = userInput.substring(0, 7);
+        
+        try {
+			FileInputStream fis = new FileInputStream(new File("dictionary.txt"));
+			br = new BufferedReader(new InputStreamReader(fis)); 
+			
+			String line = null;
+			 while ((line = br.readLine()) != null) 
+			 { 
+				 String st[] = line.split(" "); 
+				 for(int i=0; i<st.length; i++)
+				 { 
+					 if (st[i].length() <= 7 )
+					 {
+						 if(containsOnly(st[i], userInput))
+							 pln(st[i]);
+					 }
+				 }
+			 }
+			 
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} 
+		
+	}
+	
+	public static boolean containsOnly(String str, String certain){
+	    return str.matches("[" + certain + "]*");
+	}
+	
+	public static void pln(String s)
+	{
+		System.out.println(s);
+	}
+}
+
+
+//import java.io.BufferedReader;
+//import java.io.File;
+//import java.io.FileInputStream;
+//import java.io.InputStreamReader;
+//
+///**
+// * @author Sheheryar Ahmad
+// */
+//public class ListPossibleWords {
+//
+//	/**
+//	 * @param args
+//	 */
+//	public static void main(String[] args) {
+//		// TODO Auto-generated method stub
+//		
+//		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+//		System.out.print("Please enter the all seven letters without any space. Use space for a blank tile. Once done please press enter to execute: \n");
+//		String userInput = null;
+//		
+//		try {
+//			userInput = bufferedReader.readLine();
+//			
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		}
+//		if (userInput.length() < 7) {
+//			for(int charLength = userInput.length(); charLength < 7; charLength++) {
+//				userInput += " ";
+//			}
+//		}
+//		userInput = userInput.substring(0, 7);
+//		
+//		try {
+//			FileInputStream fileInputStream = new FileInputStream(new File("dictionary.txt"));
+//			bufferedReader = new BufferedReader(new InputStreamReader(fileInputStream));
+//			String line = null; 
+//			while ((line = bufferedReader.readLine()) != null) {
+//				String aString[] = line.split(" ");
+//				for (int i = 0; i < aString.length; i++) {
+//					 if (aString[i].length() <= 7) {
+//						 if (containsOnly(aString[i], userInput)) {
+//							 wordsList(aString[i]);
+//							
+//						}
+//						
+//					}
+//					
+//				}
+//				
+//			}
+//		} catch (Exception e) {
+//			// TODO: handle exception
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	private static void wordsList(String string) {
+//		// TODO Auto-generated method stub
+//		System.out.println(string);
+//		
+//	}
+//
+//	private static boolean containsOnly(String string,
+//			String userInput) {
+//		// TODO Auto-generated method stub
+//		return string.matches("[" + userInput + "]*");
+//	}
+//
+//}
