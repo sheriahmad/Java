@@ -7,7 +7,7 @@ import java.util.Scanner;
 /**
  * @author Sheheryar Ahmad
  */
-public class TwoDArray {	
+public class TwoDArray {
 
 	/**
 	 * @param args

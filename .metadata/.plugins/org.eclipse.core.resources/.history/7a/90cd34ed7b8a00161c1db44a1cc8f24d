@@ -1,0 +1,34 @@
+/*
+ * Student.java
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class Student extends Person {
+
+	/**
+	 * 
+	 */
+	private int[] testScores;
+	protected String firstName; 
+	protected String lastName; 
+	int identification;
+	
+	
+
+
+	public Student(String fName, String lName, int id,
+			int[] tscores) {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	public void printPerson() {
+		// TODO Auto-generated method stub
+		System.out.println("First Name: " + firstName + "\nLast Name: " + lastName + "\nID Number: " + identification + "\nTest Scores: " + testScores);
+		
+	}
+
+}

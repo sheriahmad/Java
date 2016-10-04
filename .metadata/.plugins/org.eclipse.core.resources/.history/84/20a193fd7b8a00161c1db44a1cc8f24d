@@ -1,0 +1,45 @@
+/*
+ * Student.java
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class Student extends Person {
+
+	/**
+	 * 
+	 */
+	private int[] testScores;
+	protected String firstName; 
+	protected String lastName; 
+	int identification;
+	
+	/**
+	 * Java constructor
+	 * @param fName
+	 * @param lName
+	 * @param id
+	 * @param tscores
+	 */
+	public Student(String fName, String lName, int id,
+			int[] tscores) {
+		// TODO Auto-generated constructor stub
+		testScores = tscores;
+		firstName = fName;
+		lastName = lName;
+		identification = id;
+	}
+
+
+
+	/**
+	 * Method prints outs all the results. 
+	 */
+	public void printPerson() {
+		// TODO Auto-generated method stub
+		System.out.println("First Name: " + firstName + "\nLast Name: " + lastName + "\nID Number: " + identification + "\nTest Scores: " + testScores);
+		
+	}
+
+}

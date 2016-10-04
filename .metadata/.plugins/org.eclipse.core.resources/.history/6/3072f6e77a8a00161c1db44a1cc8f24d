@@ -1,0 +1,28 @@
+/**
+ * 
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class Student {
+
+	/**
+	 * 
+	 */
+	
+	protected String firstName; 
+	protected String lastName; 
+	int phone; 
+	
+	public Student(String fName, String lName, int p) {
+		firstName = fName; 
+		lastName = lName;
+		phone = p; 
+	}
+		// TODO Auto-generated constructor stub
+	public void Display() {
+		System.out.println("First Name: " + firstName + "\nLast Name: " + lastName + "\nPhone number: " + phone);
+	}
+
+}

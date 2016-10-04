@@ -1,0 +1,17 @@
+/*
+ * Student.java
+ */
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class Student extends Person {
+
+	private int[] testScores;
+	protected String firstName;
+	protected String lastName;
+	int identification;
+
+	
+
+}
