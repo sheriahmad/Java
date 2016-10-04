@@ -1,6 +1,3 @@
-/*
- * ListPossibleWords.Java
- */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -50,6 +47,7 @@ public class ListPossibleWords {
 					if (aString[i].length() <= 7) {
 						if (containsOnly(aString[i], userInput)) {
 							wordsList(aString[i]);
+
 						}
 
 					}
