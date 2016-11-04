@@ -1,0 +1,44 @@
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+
+import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
+
+import jdk.internal.dynalink.beans.StaticClass;
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class SharEightSevenCentral {
+	public static String one_hour_earlier() {
+		return null;
+	}
+	
+	public  boolean isCentralTime() {
+		return false;
+	}
+	
+	public static String to_calander_formate() {
+		return null;
+	}
+	
+	 public static void main(String[] args) throws java.text.ParseException {
+
+	        try {
+	            Calendar currentdate = Calendar.getInstance();
+	            String strdate = null;
+	            DateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+	            strdate = formatter.format(currentdate.getTime());
+	            TimeZone obj = TimeZone.getTimeZone("CST");
+
+	            formatter.setTimeZone(obj);
+	            Date theResult = formatter.parse(strdate);
+
+	            System.out.println("The current time in PST is  :: " +currentdate.getTime());
+
+	            System.out.println("The date and time in :: "+ obj.getDisplayName() + " is :: " + theResult);
+	        } catch (ParseException e) {
+	           e.printStackTrace();
+	        }
+	    }
+}

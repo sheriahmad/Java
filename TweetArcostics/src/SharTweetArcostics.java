@@ -22,7 +22,7 @@ public class SharTweetArcostics {
 	public static final String WORDS_TXT_URL = "https://s3.amazonaws.com/tools-storage/interview/words-lowercase.txt";
 
 	/**
-	 * 
+	 * Reads and get the words from URL. 
 	 * @return words
 	 * @throws IOException
 	 */
@@ -41,7 +41,7 @@ public class SharTweetArcostics {
 	}
 
 	/**
-	 * 
+	 * Get all the first letters of the words and convert them to lower case. 
 	 * @param tweet
 	 * @return
 	 */
@@ -75,7 +75,7 @@ public class SharTweetArcostics {
 	}
 
 	/**
-	 * 
+	 * Checks if a words has four or more letters, splits at each white space. 
 	 * @param tweet
 	 * @return
 	 */
@@ -92,7 +92,7 @@ public class SharTweetArcostics {
 	}
 
 	/**
-	 * 
+	 * Reads the tweets from URL, checks if tweet contains four or more words. 
 	 * @return
 	 * @throws IOException
 	 */
@@ -115,9 +115,9 @@ public class SharTweetArcostics {
 		in.close();
 		return tweets;
 	}
-
+		
 	/**
-	 * 
+	 * Main method. 
 	 * @param args
 	 * @throws IOException
 	 */
@@ -127,7 +127,8 @@ public class SharTweetArcostics {
 
 		tweets = getTweets();
 		words = getWords();
-
+		
+	
 		System.out.println("Acrostic \t" + "Tweet");
 		for (String acrostics : tweets.keySet()) {
 			if (words.contains(acrostics)) {

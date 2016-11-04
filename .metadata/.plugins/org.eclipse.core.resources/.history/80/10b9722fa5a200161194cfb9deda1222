@@ -1,0 +1,25 @@
+import java.util.*;
+
+import jdk.internal.dynalink.beans.StaticClass;
+
+/**
+ * @author Sheheryar Ahmad
+ */
+public class SharEightSevenCentral {
+	public static String one_hour_earlier() {
+		return null;
+	}
+	
+	public  boolean isCentralTime() {
+		return false;
+	}
+	
+	public static String to_calander_formate() {
+		return null;
+	}
+	
+	public static void main(String args[]) {
+		Date date = new Date();
+		System.out.println(date.toString());
+	}
+}
