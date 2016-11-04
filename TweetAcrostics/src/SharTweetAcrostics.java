@@ -16,7 +16,7 @@ import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 /**
  * @author Sheheryar Ahmad
  */
-public class SharTweetArcostics {
+public class SharTweetAcrostics {
 
 	public static final String TWEETS_TXT_URL = "https://s3.amazonaws.com/tools-storage/interview/tweets.txt";
 	public static final String WORDS_TXT_URL = "https://s3.amazonaws.com/tools-storage/interview/words-lowercase.txt";
