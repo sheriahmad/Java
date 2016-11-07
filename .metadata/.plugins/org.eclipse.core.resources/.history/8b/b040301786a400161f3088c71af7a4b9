@@ -86,25 +86,30 @@ public class SharEightSevenCentral {
     public static void main(String[] args) throws ParseException {
         SharEightSevenCentral tc = new SharEightSevenCentral();
         String exampleTime = "";
-
+        //
         // get one hour earlier
+        //
         exampleTime = "2015-01-07 2:29PM";
         System.out.println(exampleTime + " (Original Time)");
         System.out.println(tc.one_hour_earlier(exampleTime) + " (1hr Earlier Time)" + "\n");
-
+        //
         // get one hour earlier
+        //
         exampleTime = "2015-01-01 12:34AM";
         System.out.println(exampleTime + " (Original Time)");
         System.out.println(tc.one_hour_earlier(exampleTime) + " (1hr Earlier Time)" + "\n");
-
+        //
         // current time zone
+        //
         String myTimeZone = TimeZone.getDefault().getDisplayName();
         System.out.println("PC Time Zone: " + myTimeZone);
-
+        //
         // whether central time zone or not
+        //
         System.out.println("Is machine in Central Time Zone?  " + tc.is_central_time() + "\n");
-        
+        //
         // convert from basicDateFormat to GMT in isoDateFormat
+        //
         exampleTime = "2014-02-08 6:00PM";
         System.out.println(exampleTime + " [" + myTimeZone + "]");
         System.out.println(tc.to_calendar_format(exampleTime) + " [Greenwich Mean Time]");
